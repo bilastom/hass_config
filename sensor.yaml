@@ -1,0 +1,48 @@
+- platform: template
+  sensors: 
+    # Air Purifier
+    xiaomi_airpurifier_aqi:
+      friendly_name: "Air Purifier"
+      unit_of_measurement: 'AQI'
+      value_template: "{{ state_attr('fan.xiaomi_air_purifier_2', 'aqi') }}"
+    xiaomi_airpurifier_humidity:
+      friendly_name: "Air Purifier humidity"
+      unit_of_measurement: '%'
+      value_template: "{{ state_attr('fan.xiaomi_air_purifier_2', 'humidity') }}"
+    xiaomi_airpurifier_temperature:
+      friendly_name: "Air Purifier temperature"
+      unit_of_measurement: '°C'
+      value_template: "{{ state_attr('fan.xiaomi_air_purifier_2', 'temperature') }}"
+    xiaomi_airpurifier_speed:
+      friendly_name: "Fan speed"
+      value_template: "{{ state_attr('fan.xiaomi_air_purifier_2', 'motor_speed') }}"
+      unit_of_measurement: "rpm"
+      icon_template: "mdi:speedometer"
+    xiaomi_airpurifier_filter_remaining:
+      friendly_name: "Filter remaining"
+      value_template: "{{ state_attr('fan.xiaomi_air_purifier_2', 'filter_life_remaining') }}"
+      unit_of_measurement: "%"
+      icon_template: "mdi:heart-outline"
+    # Humifidier Bedroom
+    xiaomi_humidifier_bedroom_humidity:
+      friendly_name: "Humidifier Humidity"
+      unit_of_measurement: '%'
+      value_template: "{{ state_attr('fan.xiaomi_humidifier_bedroom', 'humidity') }}"
+    xiaomi_humidifier_bedroom_temperature:
+      friendly_name: "Humidifier Temperature"
+      unit_of_measurement: '°C'
+      value_template: "{{ state_attr('fan.xiaomi_humidifier_bedroom', 'temperature') }}"
+    xiaomi_humidifier_bedroom_depth:
+      friendly_name: "Humidifier water level"
+      unit_of_measurement: '%'
+      value_template: "{{ state_attr('fan.xiaomi_humidifier_bedroom', 'depth') }}"
+      icon_template: "mdi:water-outline"
+    xiaomi_humidifier_bedroom_target_level:
+      friendly_name: "Humidifier target Level"
+      unit_of_measurement: '%'
+      value_template: "{{ state_attr('fan.xiaomi_humidifier_bedroom', 'target_level') }}"
+    xiaomi_humidifier_bedroom_target_level:
+      friendly_name: "Humidifier fan speed"
+      unit_of_measurement: 'rpm'
+      value_template: "{{ state_attr('fan.xiaomi_humidifier_bedroom', 'motor_speed') }}"
+      icon_template: "mdi:speedometer"

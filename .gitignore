@@ -1,0 +1,13 @@
+# Secrets
+secrets.yaml
+
+# Logs
+home-assistant.log
+
+# DB
+home-assistant_v2.db
+
+# Specific files
+.sonoff.json
+.storage
+.cloud
