@@ -72,3 +72,15 @@
       unit_of_measurement: 'rpm'
       value_template: "{{ state_attr('fan.xiaomi_humidifier', 'motor_speed') }}"
       icon_template: "mdi:speedometer"
+
+    # Children room average temperature
+    children_room_average_temperature:
+      friendly_name: "Children room average temperature"
+      unit_of_measurement: "°C"
+      value_template: "{{ ((state_attr('fan.xiaomi_humidifier', 'temperature') + state_attr('fan.xiaomi_air_purifier_2', 'temperature')) / 2) | round(2) }}"
+    
+    # Children room average humidity
+    children_room_average_temperature:
+      friendly_name: "Children room average humidity"
+      unit_of_measurement: "%"
+      value_template: "{{ ((state_attr('fan.xiaomi_humidifier', 'humidity') + state_attr('fan.xiaomi_air_purifier_2', 'humidity')) / 2) | round(2) }}"
