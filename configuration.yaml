@@ -13,8 +13,39 @@ group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
-!include inputs.yaml
 
 sonoff:
   username: !secret so_username
   password: !secret so_password
+
+input_select:
+  xiaomi_airpurifier_mode:
+    name: Mode
+    options:
+      - Auto
+      - Silent
+      - Favorite
+    icon: "mdi:animation-outline"
+  xiaomi_humidifier_mode:
+    name: Mode
+    options:
+     - Silent
+     - Medium
+     - High
+     - Auto
+    icon: "mdi:animation-outline"
+
+input_number:
+  xiaomi_airpurifier_favorite_level:
+    name: "Favorite level"
+    initial: 0
+    min: 0
+    max: 14
+    step: 1
+    icon: "mdi:weather-windy"
+  xiaomi_humidifier_bedroom_target_level:
+    name: Set target humidity
+    min: 30
+    max: 80
+    step: 10
+    icon: "mdi:weather-windy"
