@@ -37,6 +37,7 @@
         data:
           entity_id: fan.xiaomi_air_purifier_2
       icon_template: "mdi:volume-high"
+
     # Humidifier Bedroom
     xiaomi_humidifier_bedroom_led:
       friendly_name: "Humidifier LED"
