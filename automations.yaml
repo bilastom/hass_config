@@ -46,7 +46,7 @@
 # Humidifier Bedroom
 - alias: Select operation mode by input select
   trigger:
-    entity_id: input_select.xiaomi_humidifier_mode
+    entity_id: input_select.xiaomi_humidifier_bedroom_mode
     platform: state
   action:
     service: fan.set_speed
@@ -66,7 +66,7 @@
         state: none
   action:
     service: input_select.select_option
-    entity_id: input_select.xiaomi_humidifier_mode
+    entity_id: input_select.xiaomi_humidifier_bedroom_mode
     data_template:
       option: '{{ states.fan.xiaomi_humidifier_bedroom.attributes.speed }}'
 - alias: Select target humidity
@@ -99,3 +99,61 @@
     service: fan.turn_off
     data:
       entity_id: xiaomi_humidifier_bedroom
+
+# Humidifier
+- alias: Select operation mode by input select
+  trigger:
+    entity_id: input_select.xiaomi_humidifier_mode
+    platform: state
+  action:
+    service: fan.set_speed
+    data_template:
+      entity_id: fan.xiaomi_humidifier
+      speed: '{{ states.input_select.xiaomi_humidifier_mode.state }}'
+- alias: Humidifier mode changed
+  trigger:
+    platform: state
+    entity_id: fan.xiaomi_humidifier
+  condition:
+    condition: not
+    conditions:
+      - condition: state
+        entity_id: fan.xiaomi_humidifier
+        attribute: speed
+        state: none
+  action:
+    service: input_select.select_option
+    entity_id: input_select.xiaomi_humidifier_mode
+    data_template:
+      option: '{{ states.fan.xiaomi_humidifier.attributes.speed }}'
+- alias: Select target humidity
+  trigger:
+    platform: state
+    entity_id: input_number.xiaomi_humidifier_target_level
+  action:
+    service: xiaomi_miio.fan_set_target_humidity
+    data_template:
+      entity_id: fan.xiaomi_humidifier
+      humidity: '{{ states.input_number.xiaomi_humidifier_target_level.state|int }}'
+- alias: Monitor and update target humidity value
+  trigger:
+    platform: state
+    entity_id: sensor.xiaomi_humidifier_target_level
+  action:
+    service: input_number.set_value
+    entity_id: input_number.xiaomi_humidifier_target_level
+    data_template:
+      value: '{{ states.fan.xiaomi_humidifier_target_level.attributes.target_humidity }}'
+- alias: Turn off humidifier below specified water level # Not tested - check if works properly
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.xiaomi_humidifier_depth
+    below: 10
+  condition:
+    condition: template
+    value_template: "{{ (trigger.to_state.state | int) != 0 }}"
+  action:
+    service: fan.turn_off
+    data:
+      entity_id: xiaomi_humidifier
+

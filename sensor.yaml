@@ -1,5 +1,6 @@
 - platform: template
   sensors: 
+
     # Air Purifier
     xiaomi_airpurifier_aqi:
       friendly_name: "Air Purifier"
@@ -23,6 +24,7 @@
       value_template: "{{ state_attr('fan.xiaomi_air_purifier_2', 'filter_life_remaining') }}"
       unit_of_measurement: "%"
       icon_template: "mdi:heart-outline"
+
     # Humifidier Bedroom
     xiaomi_humidifier_bedroom_humidity:
       friendly_name: "Humidifier Humidity"
@@ -45,4 +47,28 @@
       friendly_name: "Humidifier fan speed"
       unit_of_measurement: 'rpm'
       value_template: "{{ state_attr('fan.xiaomi_humidifier_bedroom', 'motor_speed') }}"
+      icon_template: "mdi:speedometer"
+    
+    # Humidifier
+    xiaomi_humidifier_humidity:
+      friendly_name: "Humidifier Humidity"
+      unit_of_measurement: '%'
+      value_template: "{{ state_attr('fan.xiaomi_humidifier', 'humidity') }}"
+    xiaomi_humidifier_temperature:
+      friendly_name: "Humidifier Temperature"
+      unit_of_measurement: '°C'
+      value_template: "{{ state_attr('fan.xiaomi_humidifier', 'temperature') }}"
+    xiaomi_humidifier_depth:
+      friendly_name: "Humidifier water level"
+      unit_of_measurement: '%'
+      value_template: "{{ state_attr('fan.xiaomi_humidifier', 'depth') }}"
+      icon_template: "mdi:water-outline"
+    xiaomi_humidifier_target_level:
+      friendly_name: "Humidifier target Level"
+      unit_of_measurement: '%'
+      value_template: "{{ state_attr('fan.xiaomi_humidifier', 'target_level') }}"
+    xiaomi_humidifier_target_level:
+      friendly_name: "Humidifier fan speed"
+      unit_of_measurement: 'rpm'
+      value_template: "{{ state_attr('fan.xiaomi_humidifier', 'motor_speed') }}"
       icon_template: "mdi:speedometer"
