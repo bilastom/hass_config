@@ -5,12 +5,6 @@ views:
     icon: 'mdi:home'
     badges: []
     cards:
-      - type: entities
-        entities:
-          - switch.sonoff_10000ceb86
-        show_header_toggle: false
-        state_color: true
-        title: Overhead lights
       - type: weather-forecast
         entity: weather.home
         show_forecast: false
@@ -319,6 +313,12 @@ views:
     icon: 'mdi:television'
     badges: []
     cards:
+      - type: entities
+        entities:
+          - switch.sonoff_10000ceb86
+        show_header_toggle: false
+        state_color: true
+        title: Overhead lights
       - type: light
         entity: light.yeelight_stripe_0x0000000007c41025
         name: Yeelight Light Stripe
@@ -340,3 +340,8 @@ views:
             entity: light.yeelight_ceiling10_0x000000000776846c_ambilight
             name: Ambilight
         columns: 2
+  - title: Energy
+    path: energy
+    icon: 'mdi:battery-unknown'
+    badges: []
+    cards: []
