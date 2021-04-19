@@ -1,0 +1,342 @@
+title: Home
+views:
+  - path: default_view
+    title: Home
+    icon: 'mdi:home'
+    badges: []
+    cards:
+      - type: entities
+        entities:
+          - switch.sonoff_10000ceb86
+        show_header_toggle: false
+        state_color: true
+        title: Overhead lights
+      - type: weather-forecast
+        entity: weather.home
+        show_forecast: false
+  - title: Vacuum
+    path: ''
+    icon: 'mdi:robot-vacuum-variant'
+    panel: false
+    badges: []
+    cards:
+      - type: entities
+        entities:
+          - vacuum.roborock_vacuum_s5
+        title: Vacuum
+      - type: grid
+        title: Control
+        cards:
+          - type: button
+            tap_action:
+              action: call-service
+              service: vacuum.start
+              service_data: {}
+              target:
+                device_id: 6bbb21a1b87c2ac259c6b7bf905a868a
+            entity: vacuum.roborock_vacuum_s5
+            icon: 'mdi:play-circle-outline'
+            name: Clean
+            show_state: false
+          - type: button
+            tap_action:
+              action: call-service
+              service: vacuum.pause
+              service_data: {}
+              target:
+                device_id: 6bbb21a1b87c2ac259c6b7bf905a868a
+            icon: 'mdi:pause-circle-outline'
+            entity: vacuum.roborock_vacuum_s5
+            name: Pause
+          - type: button
+            tap_action:
+              action: call-service
+              service: vacuum.stop
+              service_data: {}
+              target:
+                device_id: 6bbb21a1b87c2ac259c6b7bf905a868a
+            icon: 'mdi:stop-circle-outline'
+            entity: vacuum.roborock_vacuum_s5
+            name: Stop
+          - type: button
+            tap_action:
+              action: call-service
+              service: vacuum.return_to_base
+              service_data: {}
+              target:
+                device_id: 6bbb21a1b87c2ac259c6b7bf905a868a
+            icon: 'mdi:map-marker-outline'
+            entity: vacuum.roborock_vacuum_s5
+            name: Dock
+        columns: 4
+      - type: grid
+        title: Room
+        cards:
+          - type: button
+            tap_action:
+              action: call-service
+              service: xiaomi_miio.vacuum_clean_segment
+              service_data:
+                entity_id: vacuum.roborock_vacuum_s5
+                segments:
+                  - 2
+              target: {}
+            entity: vacuum.roborock_vacuum_s5
+            name: Bedroom
+            icon: 'mdi:bed'
+          - type: button
+            tap_action:
+              action: call-service
+              service: xiaomi_miio.vacuum_clean_segment
+              service_data:
+                entity_id: vacuum.roborock_vacuum_s5
+                segments:
+                  - 4
+              target: {}
+            entity: vacuum.roborock_vacuum_s5
+            name: Children's room
+            icon: 'mdi:soccer'
+          - type: button
+            tap_action:
+              action: call-service
+              service: xiaomi_miio.vacuum_clean_segment
+              service_data:
+                entity_id: vacuum.roborock_vacuum_s5
+                segments:
+                  - 0
+              target: {}
+            entity: vacuum.roborock_vacuum_s5
+            name: Bathroom
+            icon: 'mdi:shower'
+          - type: button
+            tap_action:
+              action: call-service
+              service: xiaomi_miio.vacuum_clean_segment
+              service_data:
+                entity_id: vacuum.roborock_vacuum_s5
+                segments:
+                  - 16
+              target: {}
+            entity: vacuum.roborock_vacuum_s5
+            name: Hall
+            icon: 'mdi:door'
+          - type: button
+            tap_action:
+              action: call-service
+              service: xiaomi_miio.vacuum_clean_segment
+              service_data:
+                entity_id: vacuum.roborock_vacuum_s5
+                segments:
+                  - 19
+              target: {}
+            entity: vacuum.roborock_vacuum_s5
+            name: Kitchen
+            icon: 'mdi:food-fork-drink'
+          - type: button
+            tap_action:
+              action: call-service
+              service: xiaomi_miio.vacuum_clean_segment
+              service_data:
+                entity_id: vacuum.roborock_vacuum_s5
+                segments:
+                  - 17
+                  - 18
+              target: {}
+            entity: vacuum.roborock_vacuum_s5
+            name: Living room
+            icon: 'mdi:television'
+          - type: button
+            tap_action:
+              action: call-service
+              service: xiaomi_miio.vacuum_clean_segment
+              service_data:
+                entity_id: vacuum.roborock_vacuum_s5
+                segments:
+                  - 18
+              target: {}
+            entity: vacuum.roborock_vacuum_s5
+            name: Sofa area
+            icon: 'mdi:sofa'
+          - type: button
+            tap_action:
+              action: call-service
+              service: xiaomi_miio.vacuum_clean_segment
+              service_data:
+                entity_id: vacuum.roborock_vacuum_s5
+                segments:
+                  - 17
+              target: {}
+            entity: vacuum.roborock_vacuum_s5
+            name: Window area
+            icon: 'mdi:window-open-variant'
+        columns: 4
+      - type: grid
+        title: Mode
+        cards:
+          - type: button
+            tap_action:
+              action: call-service
+              service: vacuum.set_fan_speed
+              service_data:
+                fan_speed: Silent
+              target:
+                entity_id: vacuum.roborock_vacuum_s5
+            entity: vacuum.roborock_vacuum_s5
+            icon: 'mdi:fan-speed-1'
+            name: Silent
+          - type: button
+            tap_action:
+              action: call-service
+              service: vacuum.set_fan_speed
+              service_data:
+                fan_speed: Standard
+              target:
+                entity_id: vacuum.roborock_vacuum_s5
+            entity: vacuum.roborock_vacuum_s5
+            icon: 'mdi:fan-speed-2'
+            name: Balanced
+          - type: button
+            tap_action:
+              action: call-service
+              service: vacuum.set_fan_speed
+              service_data:
+                fan_speed: Medium
+              target:
+                entity_id: vacuum.roborock_vacuum_s5
+            entity: vacuum.roborock_vacuum_s5
+            icon: 'mdi:fan-speed-2'
+            name: Turbo
+          - type: button
+            tap_action:
+              action: call-service
+              service: vacuum.set_fan_speed
+              service_data:
+                fan_speed: Turbo
+              target:
+                entity_id: vacuum.roborock_vacuum_s5
+            entity: vacuum.roborock_vacuum_s5
+            icon: 'mdi:fan-plus'
+            name: Max
+        columns: 4
+      - type: picture-glance
+        entities: []
+        camera_image: camera.xiaomi_cloud_map_extractor
+  - title: Bedroom
+    path: bedroom
+    icon: 'mdi:bed-outline'
+    panel: false
+    badges: []
+    cards:
+      - type: grid
+        cards:
+          - type: sensor
+            entity: sensor.xiaomi_humidifier_bedroom_humidity
+            graph: line
+            icon: 'mdi:water'
+            name: Humidity
+          - type: entity
+            entity: sensor.xiaomi_humidifier_bedroom_temperature
+            name: Temp
+          - type: gauge
+            entity: sensor.xiaomi_humidifier_bedroom_depth
+            min: 0
+            max: 100
+        columns: 3
+      - type: grid
+        cards:
+          - type: light
+            name: Bulb
+            entity: light.yeelight_bulb
+          - type: light
+            entity: light.yeelight_bslamp3_0x000000001027e206
+            name: Bedside lamp
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.xiaomi_zigbee
+            name: Bedside Lamp
+            icon: 'mdi:lightbulb'
+            show_name: true
+            show_state: false
+            show_icon: true
+        columns: 3
+      - type: entities
+        entities:
+          - entity: fan.xiaomi_humidifier_bedroom
+          - entity: input_select.xiaomi_humidifier_bedroom_mode
+          - entity: input_number.xiaomi_humidifier_bedroom_target_level
+          - entity: switch.xiaomi_humidifier_bedroom_led
+          - entity: switch.xiaomi_humidifier_bedroom_child_lock
+          - entity: switch.xiaomi_humidifier_bedroom_dry_mode
+          - entity: sensor.xiaomi_humidifier_bedroom_depth
+  - title: Children room
+    path: children-room
+    icon: 'mdi:soccer'
+    badges: []
+    cards:
+      - type: grid
+        cards:
+          - type: entity
+            entity: sensor.children_room_average_temperature
+            name: Temp
+          - type: sensor
+            entity: sensor.children_room_average_humidity
+            graph: line
+            icon: 'mdi:water'
+            name: Hum
+          - type: sensor
+            entity: sensor.xiaomi_airpurifier_aqi
+            graph: line
+            name: AQ
+          - type: gauge
+            entity: sensor.xiaomi_humidifier_depth
+            min: 0
+            max: 100
+            name: Water level
+        columns: 4
+      - type: entities
+        entities:
+          - entity: fan.xiaomi_air_purifier_2
+          - entity: input_select.xiaomi_airpurifier_mode
+          - entity: input_number.xiaomi_airpurifier_favorite_level
+          - entity: switch.xiaomi_airpurifier_child_lock
+          - entity: switch.xiaomi_airpurifier_led
+          - entity: switch.xiaomi_airpurifier_buzzer
+          - entity: sensor.xiaomi_airpurifier_speed
+          - entity: sensor.xiaomi_airpurifier_filter_remaining
+        show_header_toggle: false
+      - type: entities
+        entities:
+          - entity: fan.xiaomi_humidifier
+          - entity: input_select.xiaomi_humidifier_mode
+          - entity: input_number.xiaomi_humidifier_target_level
+          - entity: switch.xiaomi_humidifier_led
+          - entity: switch.xiaomi_humidifier_child_lock
+          - entity: switch.xiaomi_humidifier_dry_mode
+          - entity: sensor.xiaomi_humidifier_depth
+  - title: Living room
+    path: living-room
+    icon: 'mdi:television'
+    badges: []
+    cards:
+      - type: light
+        entity: light.yeelight_stripe_0x0000000007c41025
+        name: Yeelight Light Stripe
+      - type: entities
+        entities:
+          - entity: switch.zimi_powerstrip_v2
+            name: Power stripe
+  - icon: 'mdi:food-fork-drink'
+    title: Kitchen
+    path: kitchen
+    badges: []
+    cards:
+      - type: grid
+        cards:
+          - type: light
+            entity: light.yeelight_ceiling10_0x000000000776846c
+            name: Pendant light
+          - type: light
+            entity: light.yeelight_ceiling10_0x000000000776846c_ambilight
+            name: Ambilight
+        columns: 2
