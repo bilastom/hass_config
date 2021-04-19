@@ -84,3 +84,14 @@
       friendly_name: "Children room average humidity"
       unit_of_measurement: "%"
       value_template: "{{ ((state_attr('fan.xiaomi_humidifier', 'humidity') + state_attr('fan.xiaomi_air_purifier_2', 'humidity')) / 2) | round(2) }}"
+
+# Xiaomi BLE Temperature & Humidity Sensor 
+# Disabled due to low link quality
+# - platform: mitemp_bt
+#   mac: "4C:65:A8:D8:AD:3F"
+#   name: Bedroom Temp & Humidity BLE
+#   force_update: true
+#   monitored_conditions:
+#     - temperature
+#     - humidity
+#     - battery

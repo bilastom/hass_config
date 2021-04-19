@@ -12,3 +12,6 @@ home-assistant_v2.db
 .storage
 .cloud
 core
+
+# zigbee2mqtt
+zigbee2mqtt
