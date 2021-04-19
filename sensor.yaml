@@ -77,13 +77,13 @@
     children_room_average_temperature:
       friendly_name: "Children room average temperature"
       unit_of_measurement: "°C"
-      value_template: "{{ ((state_attr('fan.xiaomi_humidifier', 'temperature') + state_attr('fan.xiaomi_air_purifier_2', 'temperature')) / 2) | round(2) }}"
+      value_template: "{{ ((state_attr('fan.xiaomi_humidifier', 'temperature') + state_attr('fan.xiaomi_air_purifier_2', 'temperature') + state_attr('sensor.0x00158d00022c7cb1_temperature', 'temperature')) / 3) | round(2) }}"
     
     # Children room average humidity
     children_room_average_humidity:
       friendly_name: "Children room average humidity"
       unit_of_measurement: "%"
-      value_template: "{{ ((state_attr('fan.xiaomi_humidifier', 'humidity') + state_attr('fan.xiaomi_air_purifier_2', 'humidity')) / 2) | round(2) }}"
+      value_template: "{{ ((state_attr('fan.xiaomi_humidifier', 'humidity') + state_attr('fan.xiaomi_air_purifier_2', 'humidity') + state_attr('sensor.0x00158d00022c7cb1_humidity', 'humidity')) / 3) | round(2) }}"
 
 # Xiaomi BLE Temperature & Humidity Sensor 
 # Disabled due to low link quality

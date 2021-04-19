@@ -11,3 +11,5 @@ Integrated Devices
 - Yeelight Ceiling Light 480mm (YLXD42YL)
 - Aqara Temperature and Humidity Sensor (WSDCGQ11LM)
 - Mijia Temperature and Humiidity Monitor (LYWSDCGQ)
+- Xiaomi Power Strip (ZNCXB01ZM)
+- Sonoff RF-WiFi Smart Switch (TSR589-RC)
