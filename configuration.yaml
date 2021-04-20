@@ -63,3 +63,12 @@ input_number:
     max: 80
     step: 10
     icon: "mdi:weather-windy"
+
+influxdb:
+  username: !secret influxdb_user
+  password: !secret influxdb_pass
+  max_retries: 3
+  default_measurement: state
+  include:
+    entities:
+      - sensor.0x00158d00022ca75c_temperature
