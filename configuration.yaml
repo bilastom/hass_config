@@ -18,6 +18,28 @@ sonoff:
   username: !secret so_username
   password: !secret so_password
 
+remote:
+  - platform: xiaomi_miio
+    host: !secret xiaomi_remote_ir_host
+    token: !secret xiaomi_remote_ir_token
+    name: IR remote
+    commands:
+      fan_toggle:
+        command:
+          - raw:mMymMwlkznMwlgBCziYSyaTIAw5gAIczARKbAGsBGc0AiIAxACJAscAiQI/BZWbTkEhAbIBaYAyAGqBs8BVQXyAR8HXwbFAEKbTmbgosEbM0CR8A1Qh8BjsAjwCPDZ8EgwvvFG8AhgSPB+8U/wR6m05DHIFHxs/AaUOJgbPBj8BHw2fIXgL7wEZgAA==
+      fan_speed:
+        command:
+          - raw:mMymkwlkznEwlkxmUzAIWaTIAwwBEAa8BpZgAR4BHyyYzGcga9N5vNQUMmICxABmBq4FiAImBHALPgEeARgNfg14Cg4LqAYoD6wGsgGICz4BHg1wFDU3m4MViUeGvgDXgEcAIQDXgfUGvoKHhMUA0or3jKQDF4H3ih+DX4FkgxLAAA==
+      fan_time_mode:
+        command:
+          - raw:mMymcwlkznEwlgBETSZAGHMAEamMymICxABsA0gEcAWeBH4BDzebgjpNAa/AscGvwYvBr8Gvwa9moNfzOcgRtMQCCDy4BpwR4AjMGvwI/Br4UPwPtCmUNfwCOAEQCxgEYBr8GvxQ/ARKbA1uCWYNfhr+B9ANbh9uKH4XmACIA0sA
+      fan_oscilation:
+        command:
+          - raw:mMymEwlk0mUwlgBETOcAGHNgEXmgDXzKZgEUA14BHgEPN5vOQLKAISZgIkCP4KHg1+FDwEfg1+F4kxm4BBTUEfwa/BHsDWACCARgGvwa/Br8Edga4Aa8WegofDg8GvwUPDX8Nfwj/FD8I/ga+BiIGvwR5gA=
+      fan_breeze_mode:
+        command:
+          - raw:mMymEwlk0mUwlkxmQAhTOcgBlOADDmYAjTObAEGBGcxAaoCcwCFARcB4wJ0As8CxZvOAH3A6UCPwhqAxYGvwYqA14EewDDm83CzgFA5jNwCCmgGvgmQFVoOngESChAFmTebgGoF5AEfgNcDX4a9CG+BZ4NZidQCh4a/B5aIaQOnga+KH4obgGmGv4a+QAA==
+
 input_select:
   xiaomi_airpurifier_mode:
     name: Mode

@@ -1,0 +1,55 @@
+fan_turn_on_off:
+  sequence:
+  - service: remote.send_command
+    target:
+      entity_id: remote.xiaomi_miio_192_168_0_36
+    data:
+      command:
+      - fan_toggle
+      entity_id: remote.xiaomi_miio_192_168_0_36
+  mode: single
+  alias: Fan toggle
+fan_set_speed:
+  sequence:
+  - service: remote.send_command
+    target:
+      entity_id: remote.xiaomi_miio_192_168_0_36
+    data:
+      command:
+      - fan_speed
+      entity_id: remote.xiaomi_miio_192_168_0_36
+  mode: single
+  alias: Set fan speed
+fan_time_mode:
+  sequence:
+  - service: remote.send_command
+    target:
+      entity_id: remote.xiaomi_miio_192_168_0_36
+    data:
+      command:
+      - fan_time_mode
+      entity_id: remote.xiaomi_miio_192_168_0_36
+  mode: single
+  alias: Set fan time mode
+fan_oscilation:
+  sequence:
+  - service: remote.send_command
+    target:
+      entity_id: remote.xiaomi_miio_192_168_0_36
+    data:
+      command:
+      - fan_oscilation
+      entity_id: remote.xiaomi_miio_192_168_0_36
+  mode: single
+  alias: Fan oscilation mode
+fan_breeze_mode:
+  sequence:
+  - service: remote.send_command
+    target:
+      entity_id: remote.xiaomi_miio_192_168_0_36
+    data:
+      command:
+      - fan_breeze_mode
+      entity_id: remote.xiaomi_miio_192_168_0_36
+  mode: single
+  alias: Fan breeze mode
