@@ -15,3 +15,6 @@ core
 
 # zigbee2mqtt
 zigbee2mqtt
+
+# custom components
+custom_components
