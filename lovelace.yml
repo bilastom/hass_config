@@ -228,9 +228,10 @@ views:
             graph: line
             icon: 'mdi:water'
             name: Humidity
-          - type: entity
+          - type: sensor
             entity: sensor.xiaomi_humidifier_bedroom_temperature
             name: Temp
+            graph: line
           - type: gauge
             entity: sensor.xiaomi_humidifier_bedroom_depth
             min: 0
@@ -270,9 +271,10 @@ views:
     cards:
       - type: grid
         cards:
-          - type: entity
+          - type: sensor
             entity: sensor.children_room_average_temperature
             name: Temp
+            graph: line
           - type: sensor
             entity: sensor.children_room_average_humidity
             graph: line
@@ -282,12 +284,24 @@ views:
             entity: sensor.xiaomi_airpurifier_aqi
             graph: line
             name: AQ
-          - type: gauge
-            entity: sensor.xiaomi_humidifier_depth
-            min: 0
-            max: 100
-            name: Water level
-        columns: 4
+        columns: 3
+      - type: entity
+        entity: binary_sensor.0x00158d0001a99d9d_contact
+        name: Window
+        icon: 'mdi:window-open-variant'
+      - type: gauge
+        entity: sensor.xiaomi_humidifier_depth
+        min: 0
+        max: 100
+      - type: entities
+        entities:
+          - entity: fan.xiaomi_humidifier
+          - entity: input_select.xiaomi_humidifier_mode
+          - entity: input_number.xiaomi_humidifier_target_level
+          - entity: switch.xiaomi_humidifier_led
+          - entity: switch.xiaomi_humidifier_child_lock
+          - entity: switch.xiaomi_humidifier_dry_mode
+          - entity: sensor.xiaomi_humidifier_depth
       - type: entities
         entities:
           - entity: fan.xiaomi_air_purifier_2
@@ -299,15 +313,6 @@ views:
           - entity: sensor.xiaomi_airpurifier_speed
           - entity: sensor.xiaomi_airpurifier_filter_remaining
         show_header_toggle: false
-      - type: entities
-        entities:
-          - entity: fan.xiaomi_humidifier
-          - entity: input_select.xiaomi_humidifier_mode
-          - entity: input_number.xiaomi_humidifier_target_level
-          - entity: switch.xiaomi_humidifier_led
-          - entity: switch.xiaomi_humidifier_child_lock
-          - entity: switch.xiaomi_humidifier_dry_mode
-          - entity: sensor.xiaomi_humidifier_depth
   - title: Living room
     path: living-room
     icon: 'mdi:television'
@@ -322,6 +327,48 @@ views:
       - type: light
         entity: light.yeelight_stripe_0x0000000007c41025
         name: Yeelight Light Stripe
+      - type: thermostat
+        entity: climate.0x804b50fffe25220a
+      - type: grid
+        title: Fan
+        cards:
+          - type: button
+            tap_action:
+              action: call-service
+              service: script.fan_turn_on_off
+              service_data: {}
+              target: {}
+            icon: 'mdi:power'
+          - type: button
+            tap_action:
+              action: call-service
+              service: script.fan_set_speed
+              service_data: {}
+              target: {}
+            icon: 'mdi:speedometer'
+          - type: button
+            tap_action:
+              action: call-service
+              service: script.fan_oscilation
+              service_data: {}
+              target: {}
+            icon: 'mdi:rotate-3d-variant'
+          - type: button
+            tap_action:
+              action: call-service
+              service: script.fan_breeze_mode
+              service_data: {}
+              target: {}
+            icon: 'mdi:waves'
+          - type: button
+            tap_action:
+              action: call-service
+              service: script.fan_time_mode
+              service_data: {}
+              target: {}
+            icon: 'mdi:clock-outline'
+        columns: 5
+        square: true
       - type: entities
         entities:
           - entity: switch.zimi_powerstrip_v2
