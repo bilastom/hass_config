@@ -72,3 +72,5 @@ influxdb:
   include:
     entities:
       - sensor.0x00158d00022ca75c_temperature
+      - sensor.0x00158d00022ca75c_humidity
+      - sensor.0x00158d00022ca75c_pressure
