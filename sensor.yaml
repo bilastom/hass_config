@@ -85,6 +85,12 @@
       unit_of_measurement: "%"
       value_template: "{{ ((state_attr('fan.xiaomi_humidifier', 'humidity') + state_attr('fan.xiaomi_air_purifier_2', 'humidity') + state_attr('sensor.0x00158d00022c7cb1_humidity', 'humidity')) / 3) | round(1) }}"
 
+- platform: time_date
+  display_options: 
+   - 'time'
+   - 'date'
+   - 'date_time'
+
 # Xiaomi BLE Temperature & Humidity Sensor 
 # Disabled due to low link quality
 # - platform: mitemp_bt
