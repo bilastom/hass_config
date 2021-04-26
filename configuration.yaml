@@ -96,3 +96,10 @@ influxdb:
       - sensor.0x00158d00022ca75c_temperature
       - sensor.0x00158d00022ca75c_humidity
       - sensor.0x00158d00022ca75c_pressure
+
+media_player:
+  - platform: yamaha
+    host: !secret yamaha_receiver_host
+    name: "Yamaha"
+    zone_names:
+      Main_Zone: "Salon"
