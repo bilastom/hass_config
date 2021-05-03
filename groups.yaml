@@ -1,0 +1,13 @@
+family_room_lights:
+  name: Family Room Lights
+  entities:
+    - switch.wall_switch_family_room_1_l1
+    - switch.wall_switch_family_room_1_l2
+    - switch.sonoff_family_room
+    - light.yeelight_stripe_0x0000000007c41025
+bedroom_lights:
+  name: Bedroom Lights
+  entities:
+    - switch.wall_switch_bedroom
+    - light.yeelight_bslamp3
+    - switch.power_switch
