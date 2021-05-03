@@ -103,3 +103,6 @@ media_player:
     name: "Yamaha"
     zone_names:
       Main_Zone: "Salon"
+  - platform: androidtv
+    host: !secret mibox_host
+    name: MiBOX3
