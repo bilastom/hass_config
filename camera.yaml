@@ -5,5 +5,16 @@
   username: !secret mi_home_username
   password: !secret mi_home_password
   draw: ['all']
+  colors:
+    color_map_outside: [0, 0, 0]
   attributes:
     - calibration_points 
+
+- platform: generic
+  name: DaFang3
+  username: !secret dafang_user
+  password: !secret dafang_pass
+  authentication: basic
+  still_image_url: !secret dafang_image_url
+  verify_ssl: false
+  scan_interval: 2
