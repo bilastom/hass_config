@@ -8,6 +8,10 @@ views:
       - type: weather-forecast
         entity: weather.home
         show_forecast: false
+      - type: media-control
+        entity: media_player.yamaha_salon
+      - type: media-control
+        entity: media_player.mibox3
   - title: Vacuum
     path: ''
     icon: 'mdi:robot-vacuum-variant'
@@ -215,68 +219,30 @@ views:
       - type: picture-glance
         entities: []
         camera_image: camera.xiaomi_cloud_map_extractor
-  - title: Bedroom
-    path: bedroom
-    icon: 'mdi:bed-outline'
-    panel: false
-    badges: []
-    cards:
-      - type: grid
-        cards:
-          - type: sensor
-            entity: sensor.xiaomi_humidifier_bedroom_humidity
-            graph: line
-            icon: 'mdi:water'
-            name: Humidity
-          - type: sensor
-            entity: sensor.xiaomi_humidifier_bedroom_temperature
-            name: Temp
-            graph: line
-          - type: gauge
-            entity: sensor.xiaomi_humidifier_bedroom_depth
-            min: 0
-            max: 100
-        columns: 3
-      - type: grid
-        cards:
-          - type: light
-            name: Bulb
-            entity: light.yeelight_bulb
-          - type: light
-            entity: light.yeelight_bslamp3_0x000000001027e206
-            name: Bedside lamp
-          - type: button
-            tap_action:
-              action: toggle
-            entity: switch.xiaomi_zigbee
-            name: Bedside Lamp
-            icon: 'mdi:lightbulb'
-            show_name: true
-            show_state: false
-            show_icon: true
-        columns: 3
-      - type: entities
-        entities:
-          - entity: fan.xiaomi_humidifier_bedroom
-          - entity: input_select.xiaomi_humidifier_bedroom_mode
-          - entity: input_number.xiaomi_humidifier_bedroom_target_level
-          - entity: switch.xiaomi_humidifier_bedroom_led
-          - entity: switch.xiaomi_humidifier_bedroom_child_lock
-          - entity: switch.xiaomi_humidifier_bedroom_dry_mode
-          - entity: sensor.xiaomi_humidifier_bedroom_depth
   - title: Children room
     path: children-room
     icon: 'mdi:soccer'
     badges: []
     cards:
+      - type: picture-entity
+        entity: camera.dafang3
+      - type: grid
+        cards:
+          - type: light
+            entity: light.yeelight_ceiling15_0x00000000066a3299
+            name: Ceiling Light
+          - type: light
+            entity: light.0x14b457fffe4af3fa
+            name: IKEA bulb
+        columns: 2
       - type: grid
         cards:
           - type: sensor
-            entity: sensor.children_room_average_temperature
+            entity: sensor.kids_room_average_temperature
             name: Temp
             graph: line
           - type: sensor
-            entity: sensor.children_room_average_humidity
+            entity: sensor.kids_room_average_humidity
             graph: line
             icon: 'mdi:water'
             name: Hum
@@ -286,7 +252,7 @@ views:
             name: AQ
         columns: 3
       - type: entity
-        entity: binary_sensor.0x00158d0001a99d9d_contact
+        entity: binary_sensor.window_kids_room_contact
         name: Window
         icon: 'mdi:window-open-variant'
       - type: gauge
@@ -313,22 +279,121 @@ views:
           - entity: sensor.xiaomi_airpurifier_speed
           - entity: sensor.xiaomi_airpurifier_filter_remaining
         show_header_toggle: false
+  - title: Bedroom
+    path: bedroom
+    icon: 'mdi:bed-outline'
+    panel: false
+    badges: []
+    cards:
+      - type: grid
+        cards:
+          - type: sensor
+            entity: sensor.xiaomi_humidifier_bedroom_humidity
+            graph: line
+            icon: 'mdi:water'
+            name: Humidity
+          - type: sensor
+            entity: sensor.xiaomi_humidifier_bedroom_temperature
+            name: Temp
+            graph: line
+          - type: gauge
+            entity: sensor.xiaomi_humidifier_bedroom_depth
+            min: 0
+            max: 100
+        columns: 3
+      - type: grid
+        cards:
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.wall_switch_bedroom
+            show_name: true
+            icon: 'mdi:lightbulb'
+            name: Main
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.power_switch
+            icon: 'mdi:lightbulb'
+            show_name: true
+            show_state: false
+            show_icon: true
+            name: Desk
+          - type: button
+            tap_action:
+              action: toggle
+            show_name: false
+            entity: light.yeelight_bslamp3
+            name: Bedsid
+            show_state: true
+          - type: button
+            tap_action:
+              action: toggle
+            entity: group.bedroom_lights
+            show_name: true
+            name: All
+        columns: 4
+      - type: grid
+        cards:
+          - type: light
+            entity: light.yeelight_bslamp3
+            name: Bedside lamp
+          - type: light
+            entity: light.yeelight_bulb
+        columns: 2
+      - type: entities
+        entities:
+          - entity: fan.xiaomi_humidifier_bedroom
+          - entity: input_select.xiaomi_humidifier_bedroom_mode
+          - entity: input_number.xiaomi_humidifier_bedroom_target_level
+          - entity: switch.xiaomi_humidifier_bedroom_led
+          - entity: switch.xiaomi_humidifier_bedroom_child_lock
+          - entity: switch.xiaomi_humidifier_bedroom_dry_mode
+          - entity: sensor.xiaomi_humidifier_bedroom_depth
   - title: Living room
     path: living-room
     icon: 'mdi:television'
     badges: []
     cards:
-      - type: entities
-        entities:
-          - switch.sonoff_10000ceb86
-        show_header_toggle: false
-        state_color: true
-        title: Overhead lights
+      - type: grid
+        cards:
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.wall_switch_family_room_1_l1
+            icon: 'mdi:lightbulb'
+            show_name: false
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.wall_switch_family_room_1_l2
+            show_name: false
+            icon: 'mdi:lightbulb'
+            hold_action:
+              action: none
+          - type: button
+            tap_action:
+              action: toggle
+            entity: switch.sonoff_family_room
+            show_name: false
+            icon: 'mdi:lightbulb'
+          - type: button
+            tap_action:
+              action: toggle
+            entity: light.yeelight_stripe_0x0000000007c41025
+            show_name: false
+          - type: button
+            tap_action:
+              action: toggle
+            icon: 'hass:google-circles-communities'
+            entity: group.family_room_lights
+            show_name: false
+        columns: 5
       - type: light
         entity: light.yeelight_stripe_0x0000000007c41025
         name: Yeelight Light Stripe
       - type: thermostat
-        entity: climate.0x804b50fffe25220a
+        entity: climate.thermostat_family_room
       - type: grid
         title: Fan
         cards:
