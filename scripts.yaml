@@ -53,3 +53,17 @@ fan_breeze_mode:
       entity_id: remote.xiaomi_miio_192_168_0_36
   mode: single
   alias: Fan breeze mode
+
+ceiling_normal_mode:
+  sequence:
+  - service: yeelight.set_mode
+    data:
+      entity_id: light.yeelight_ceiling15_0x00000000066a3299
+      mode: normal
+
+ceiling_moonlight_mode:
+  sequence:
+  - service: yeelight.set_mode
+    data:
+      entity_id: light.yeelight_ceiling15_0x00000000066a3299
+      mode: moonlight
