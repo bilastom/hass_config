@@ -10,6 +10,8 @@ WiFi:
 - Yeelight Crystal Pendant Light (YLDL01YL)
 - Yeelight Ceiling Light 480mm (YLXD42YL)
 - Xiaomi Power Strip (ZNCXB01ZM)
+- Xiaomi Dafang Smart Camera
+- Xiaomi MiBox 3 (MDZ-16-AB)
 
 Zigbee:
 - Aqara Temperature and Humidity Sensor (WSDCGQ11LM) 3x
@@ -18,6 +20,7 @@ Zigbee:
 - Tuya Thermostat TS0601 (HY368)
 - MiJia door & window contact sensor (MCCGQ01LM)
 - Xiaomi IR remote (MJYKQ01CM)
+- IKEA TRÅDFRI LED GU10 Bulb (904.086.03)
 
 IR:
 - AEG Fan (TVL 5537)
