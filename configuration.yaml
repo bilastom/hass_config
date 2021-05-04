@@ -39,6 +39,12 @@ remote:
       fan_breeze_mode:
         command:
           - raw:mMymEwlk0mUwlkxmQAhTOcgBlOADDmYAjTObAEGBGcxAaoCcwCFARcB4wJ0As8CxZvOAH3A6UCPwhqAxYGvwYqA14EewDDm83CzgFA5jNwCCmgGvgmQFVoOngESChAFmTebgGoF5AEfgNcDX4a9CG+BZ4NZidQCh4a/B5aIaQOnga+KH4obgGmGv4a+QAA==
+      mibox_toggle:
+        command:
+          - raw:mMwmswlk1mkwlk2mYA8zGaTIAjgGfAQ8BDwCLmEA
+      lg_tv_toggle:
+        command:
+          - raw:nMwmMwlk0mk1mEsms0AD+YSyYzacgOlOAGOmYB+zaZARlNgB1mIBiAYFMZsCV4JTgMqBeQEUAEeAH4M0gvQAx4P7gDoGiQQ/gt+Dr4BHgENMIAA=
 
 input_select:
   xiaomi_airpurifier_mode:

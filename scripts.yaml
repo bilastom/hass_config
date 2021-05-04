@@ -54,6 +54,18 @@ fan_breeze_mode:
   mode: single
   alias: Fan breeze mode
 
+toggle_mibox:
+  sequence:
+  - service: remote.send_command
+    target:
+      entity_id: remote.xiaomi_miio_192_168_0_36
+    data:
+      command:
+      - mibox_toggle
+      entity_id: remote.xiaomi_miio_192_168_0_36
+  mode: single
+  alias: MiBOX toggle
+
 ceiling_normal_mode:
   sequence:
   - service: yeelight.set_mode

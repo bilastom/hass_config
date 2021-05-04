@@ -12,6 +12,8 @@ WiFi:
 - Xiaomi Power Strip (ZNCXB01ZM)
 - Xiaomi Dafang Smart Camera
 - Xiaomi MiBox 3 (MDZ-16-AB)
+- Xiaomi IR remote (MJYKQ01CM)
+- Xiaomi Smart WiFi Socket (ZNCZ04CM)
 
 Zigbee:
 - Aqara Temperature and Humidity Sensor (WSDCGQ11LM) 3x
@@ -19,11 +21,14 @@ Zigbee:
 - MiJia wireless switch (WXKG01LM)
 - Tuya Thermostat TS0601 (HY368)
 - MiJia door & window contact sensor (MCCGQ01LM)
-- Xiaomi IR remote (MJYKQ01CM)
 - IKEA TRÅDFRI LED GU10 Bulb (904.086.03)
+- Tuya 1 Gang Switch (TS0001) 2x
+- Tuya 2 Gang Switch (TS0002)
+- Tuya Curtain Roller Blind Motor (TS0601_cover)
 
 IR:
 - AEG Fan (TVL 5537)
+- TV LG (42LS570S)
 
 Cloud:
 - Sonoff RF-WiFi Smart Switch (TSR589-RC)
