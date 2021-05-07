@@ -79,3 +79,40 @@ ceiling_moonlight_mode:
     data:
       entity_id: light.yeelight_ceiling15_0x00000000066a3299
       mode: moonlight
+
+blinds_drive_close:
+  alias: Open bedroom blinds on 0%
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: zigbee2mqtt/blinds_drive/set
+        payload: '{"position": 0 }'
+blinds_drive_open_34:
+  alias: Open bedroom blinds on 34%
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: zigbee2mqtt/blinds_drive/set
+        payload: '{"position": 34 }'
+blinds_drive_open_65:
+  alias: Open bedroom blinds on 65%
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: zigbee2mqtt/blinds_drive/set
+        payload: '{"position": 65 }'
+blinds_drive_open_80:
+  alias: Open bedroom blinds on 80%
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: zigbee2mqtt/blinds_drive/set
+        payload: '{"position": 80 }'
+blinds_drive_open_100:
+  alias: Open bedroom blinds on 100%
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: zigbee2mqtt/blinds_drive/set
+        payload: '{"position": 100 }'
+  
