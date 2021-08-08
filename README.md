@@ -39,3 +39,6 @@ LAN:
 
 Bluetooth:
 - MiJia Temperature and Humiidity Monitor (LYWSDCGQ)
+
+UPS:
+- Eaton 3S700FR
