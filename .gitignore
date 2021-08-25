@@ -18,3 +18,7 @@ zigbee2mqtt
 
 # custom components
 custom_components
+
+# db
+home-assistant_v2.db-shm
+home-assistant_v2.db-wal
