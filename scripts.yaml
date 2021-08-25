@@ -115,4 +115,4 @@ blinds_drive_open_100:
       data:
         topic: zigbee2mqtt/blinds_drive/set
         payload: '{"position": 100 }'
-  
+        

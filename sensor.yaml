@@ -73,23 +73,44 @@
       value_template: "{{ state_attr('fan.xiaomi_humidifier', 'motor_speed') }}"
       icon_template: "mdi:speedometer"
 
-    # Kids room average temperature
-    kids_room_average_temperature:
-      friendly_name: "Kids room average temperature"
-      unit_of_measurement: "°C"
-      value_template: "{{ ((state_attr('fan.xiaomi_humidifier', 'temperature') + state_attr('fan.xiaomi_air_purifier_2', 'temperature') + state_attr('sensor.temp_kids_room_temperature', 'temperature')) / 3) | round(1) }}"
-    
-    # Kids room average humidity
-    kids_room_average_humidity:
-      friendly_name: "Kids room average humidity"
-      unit_of_measurement: "%"
-      value_template: "{{ ((state_attr('fan.xiaomi_humidifier', 'humidity') + state_attr('fan.xiaomi_air_purifier_2', 'humidity') + state_attr('sensor.temp_kids_room_humidity', 'humidity')) / 3) | round(1) }}"
-
 - platform: time_date
   display_options: 
    - 'time'
    - 'date'
    - 'date_time'
+
+# Kids room average humidity
+- platform: min_max
+  name: kids_room_average_temperature
+  type: mean
+  entity_ids:
+    - sensor.xiaomi_airpurifier_temperature
+    - sensor.xiaomi_humidifier_temperature
+    - sensor.temp_kids_room_temperature
+
+# Kids room average humidity
+- platform: min_max
+  name: kids_room_average_humidity
+  type: mean
+  entity_ids:
+    - sensor.xiaomi_airpurifier_humidity
+    - sensor.xiaomi_humidifier_humidity
+    - sensor.temp_kids_room_humidity
+
+# Bedroom average temperature
+- platform: min_max
+  name: bedroom_average_temperature
+  type: mean
+  entity_ids:
+    - sensor.xiaomi_humidifier_bedroom_temperature
+
+
+# Bedroom average humidity
+- platform: min_max
+  name: bedroom_average_humidity
+  type: mean
+  entity_ids:
+    - sensor.xiaomi_humidifier_bedroom_humidity
 
 # Xiaomi BLE Temperature & Humidity Sensor 
 # Disabled due to low link quality
