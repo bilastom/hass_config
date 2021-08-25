@@ -75,9 +75,9 @@ views:
               action: call-service
               service: xiaomi_miio.vacuum_clean_segment
               service_data:
-                entity_id: vacuum.roborock_vacuum_s5
+                entity_id: x
                 segments:
-                  - 2
+                  - 2 # Bedroom
               target: {}
             entity: vacuum.roborock_vacuum_s5
             name: Bedroom
@@ -89,7 +89,7 @@ views:
               service_data:
                 entity_id: vacuum.roborock_vacuum_s5
                 segments:
-                  - 4
+                  - 3 # Children room
               target: {}
             entity: vacuum.roborock_vacuum_s5
             name: Children's room
@@ -101,7 +101,7 @@ views:
               service_data:
                 entity_id: vacuum.roborock_vacuum_s5
                 segments:
-                  - 0
+                  - 1 # Bathtoom
               target: {}
             entity: vacuum.roborock_vacuum_s5
             name: Bathroom
@@ -113,7 +113,7 @@ views:
               service_data:
                 entity_id: vacuum.roborock_vacuum_s5
                 segments:
-                  - 16
+                  - 16 # Hall
               target: {}
             entity: vacuum.roborock_vacuum_s5
             name: Hall
@@ -125,7 +125,7 @@ views:
               service_data:
                 entity_id: vacuum.roborock_vacuum_s5
                 segments:
-                  - 19
+                  - 21 # Kitchen
               target: {}
             entity: vacuum.roborock_vacuum_s5
             name: Kitchen
@@ -137,8 +137,9 @@ views:
               service_data:
                 entity_id: vacuum.roborock_vacuum_s5
                 segments:
-                  - 17
-                  - 18
+                  - 17 # window
+                  - 19 # carpet
+                  - 18 # bar
               target: {}
             entity: vacuum.roborock_vacuum_s5
             name: Living room
@@ -150,7 +151,7 @@ views:
               service_data:
                 entity_id: vacuum.roborock_vacuum_s5
                 segments:
-                  - 18
+                  - 19 # carpet
               target: {}
             entity: vacuum.roborock_vacuum_s5
             name: Sofa area
@@ -162,7 +163,7 @@ views:
               service_data:
                 entity_id: vacuum.roborock_vacuum_s5
                 segments:
-                  - 17
+                  - 17 # window
               target: {}
             entity: vacuum.roborock_vacuum_s5
             name: Window area
