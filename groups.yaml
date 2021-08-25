@@ -5,6 +5,8 @@ family_room_lights:
     - switch.wall_switch_family_room_1_l2
     - switch.sonoff_family_room
     - light.yeelight_stripe_0x0000000007c41025
+    - light.yeelight_ceiling10_0x000000000776846c
+    
 bedroom_lights:
   name: Bedroom Lights
   entities:
