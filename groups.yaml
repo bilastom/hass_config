@@ -13,3 +13,23 @@ bedroom_lights:
     - switch.wall_switch_bedroom
     - light.yeelight_bslamp3
     - switch.power_switch
+
+all_lights:
+  name: All Lights
+  entities:
+    - switch.wall_switch_bedroom
+    - light.yeelight_bulb
+    - light.yeelight_bslamp3
+    - switch.power_switch
+    - switch.wall_switch_family_room_1_l1
+    - switch.wall_switch_family_room_1_l2
+    - switch.sonoff_family_room
+    - light.yeelight_stripe_0x0000000007c41025
+    - light.yeelight_ceiling10_0x000000000776846c
+    - light.yeelight_ceiling10_0x000000000776846c_ambilight
+    - light.yeelight_ceiling15_0x00000000066a3299
+    - switch.wall_switch_bathroom_l1
+    - switch.wall_switch_bathroom_l2
+    - switch.wall_switch_hall
+    - light.ikea_bulb_kids_room
+    - light.lumi_gateway_v3_light
