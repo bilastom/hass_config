@@ -383,12 +383,7 @@ views:
               action: toggle
             entity: light.yeelight_stripe_0x0000000007c41025
             show_name: false
-          - type: button
-            tap_action:
-              action: toggle
-            icon: 'hass:google-circles-communities'
-            entity: group.family_room_lights
-            show_name: false
+
         columns: 5
       - type: light
         entity: light.yeelight_stripe_0x0000000007c41025
