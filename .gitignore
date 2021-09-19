@@ -2,7 +2,7 @@
 secrets.yaml
 
 # Logs
-home-assistant.log
+home-assistant.log*
 
 # DB
 home-assistant_v2.db
@@ -22,3 +22,6 @@ custom_components
 # db
 home-assistant_v2.db-shm
 home-assistant_v2.db-wal
+
+# vacuum map
+www/map_image_roborock.vacuum.s5.png

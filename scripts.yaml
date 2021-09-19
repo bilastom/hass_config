@@ -115,4 +115,21 @@ blinds_drive_open_100:
       data:
         topic: zigbee2mqtt/blinds_drive/set
         payload: '{"position": 100 }'
-        
+
+roborock_zone_clean:
+  alias: Clean chosen zones
+  sequence:
+  - service: xiaomi_miio.vacuum_clean_segment
+    data:
+      entity_id: vacuum.roborock_vacuum_s5
+      segments: >-
+        {% set s = [] %}
+        {% set s = s + [2]  if is_state('input_boolean.bedroom_clean', 'on') else s %}
+        {% set s = s + [16]  if is_state('input_boolean.hall_clean', 'on') else s %}
+        {% set s = s + [1]  if is_state('input_boolean.bath_room_clean', 'on') else s %}
+        {% set s = s + [3]  if is_state('input_boolean.children_room_clean', 'on') else s %}
+        {% set s = s + [21]  if is_state('input_boolean.kitchen_clean', 'on') else s %}
+        {% set s = s + [18]  if is_state('input_boolean.bar_clean', 'on') else s %}
+        {% set s = s + [19]  if is_state('input_boolean.carpet_clean', 'on') else s %}
+        {% set s = s + [17]  if is_state('input_boolean.table_clean', 'on') else s %}
+        {{s}}

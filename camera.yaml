@@ -8,7 +8,16 @@
   colors:
     color_map_outside: [0, 0, 0]
   attributes:
-    - calibration_points 
+    - calibration_points
+  map_transformation:
+    scale: 1
+    trim:
+      top: 20
+      bottom: 15
+      left: 25
+      right: 25
+  store_map_image: true
+  store_map_path: /config/www
 
 - platform: generic
   name: DaFang3

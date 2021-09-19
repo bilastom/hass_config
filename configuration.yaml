@@ -46,6 +46,33 @@ remote:
         command:
           - raw:nMwmMwlk0mk1mEsms0AD+YSyYzacgOlOAGOmYB+zaZARlNgB1mIBiAYFMZsCV4JTgMqBeQEUAEeAH4M0gvQAx4P7gDoGiQQ/gt+Dr4BHgENMIAA=
 
+# vacuum rooms
+# 2 Bedroom
+# 3 Children room
+# 1 Bathtoom
+# 16 Hall
+# 21 Kitchen
+# 17 window
+# 19 carpet
+# 18 bar
+input_boolean:
+  bedroom_clean:
+    name: Bedroom
+  hall_clean:
+    name: Hall
+  children_room_clean:
+    name: Children room
+  bath_room_clean:
+    name: Bathroom
+  kitchen_clean:
+    name: Kitchen
+  bar_clean:
+    name: Bar
+  carpet_clean:
+    name: Carpet
+  table_clean:
+    name: Table
+
 input_select:
   xiaomi_airpurifier_mode:
     name: Mode
