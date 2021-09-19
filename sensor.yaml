@@ -112,6 +112,13 @@
   entity_ids:
     - sensor.xiaomi_humidifier_bedroom_humidity
 
+# Hall average temperature
+- platform: min_max
+  name: hall_average_temperature
+  type: mean
+  entity_ids:
+    - sensor.hall_motion_sensor_temperature
+
 # Xiaomi BLE Temperature & Humidity Sensor 
 # Disabled due to low link quality
 # - platform: mitemp_bt
