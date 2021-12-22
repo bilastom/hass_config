@@ -99,13 +99,6 @@ input_select:
     icon: "mdi:animation-outline"
 
 input_number:
-  xiaomi_airpurifier_favorite_level:
-    name: "Favorite level"
-    initial: 0
-    min: 0
-    max: 14
-    step: 1
-    icon: "mdi:weather-windy"
   xiaomi_humidifier_bedroom_target_level:
     name: Set target humidity
     min: 30
@@ -114,7 +107,7 @@ input_number:
     icon: "mdi:weather-windy"
   xiaomi_humidifier_target_level:
     name: Set target humidity
-    min: 30
+    min: 40
     max: 80
     step: 10
     icon: "mdi:weather-windy"
