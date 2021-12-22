@@ -119,6 +119,30 @@
   entity_ids:
     - sensor.hall_motion_sensor_temperature
 
+# Raspberry Pi
+# The systemmonitor sensor platform allows you to monitor disk usage, memory usage, CPU usage, and running processes.
+# https://www.home-assistant.io/integrations/systemmonitor/
+- platform: systemmonitor
+  resources:
+    - type: processor_use
+    - type: load_1m 
+    - type: load_5m
+    - type: load_15m
+    - type: memory_use
+    - type: memory_use_percent
+    - type: swap_use
+    - type: swap_use_percent
+    - type: disk_use
+    - type: disk_use_percent
+    - type: last_boot
+
+- platform: command_line
+  name: CPU temperature
+  command: "/bin/cat /sys/class/thermal/thermal_zone0/temp"
+  unit_of_measurement: '°C'
+  value_template: '{{ (value | int /1000) | round(1) }}'
+
+
 # Xiaomi BLE Temperature & Humidity Sensor 
 # Disabled due to low link quality
 # - platform: mitemp_bt
