@@ -107,7 +107,7 @@ input_number:
     icon: "mdi:weather-windy"
   xiaomi_humidifier_target_level:
     name: Set target humidity
-    min: 40
+    min: 45
     max: 80
     step: 10
     icon: "mdi:weather-windy"
