@@ -7,6 +7,19 @@ views:
       - type: weather-forecast
         entity: weather.home
         show_forecast: false
+      - type: horizontal-stack
+        cards:
+          - type: sensor
+            graph: line
+            entity: sensor.temp_balcony_temperature
+            name: balcony temp
+          - type: sensor
+            graph: line
+            entity: sensor.temp_balcony_humidity
+            name: balcony hum
+          - type: sensor
+            graph: line
+            entity: sensor.temp_balcony_pressure
       - type: entities
         entities:
           - entity: switch.wall_switch_bedroom
@@ -41,6 +54,7 @@ views:
           - entity: light.yeelight_ceiling10_0x000000000776846c_ambilight
             name: Kuchnia Ambilight
             icon: mdi:border-top-variant
+          - entity: switch.gosundsp111_1_2
         title: Salon
       - type: entities
         entities:
@@ -73,6 +87,198 @@ views:
         entity: group.all_lights
         name: Wszystkie Światła
         icon_height: 50px
+      - type: conditional
+        conditions:
+          - entity: light.christmas_light
+            state_not: unavailable
+        card:
+          type: vertical-stack
+          cards:
+            - type: custom:button-card
+              name: Christmas Tree Lights
+            - type: button
+              tap_action:
+                action: toggle
+              entity: light.christmas_light
+              icon_height: 40px
+              show_name: false
+            - type: horizontal-stack
+              cards:
+                - type: custom:button-card
+                  color_type: card
+                  aspect_ratio: 2/1
+                  color: rgb(223, 0, 0)
+                  tap_action:
+                    action: call-service
+                    service: localtuya.set_dp
+                    service_data:
+                      value: R
+                      device_id: 13681632c44f33e17e70
+                      dp: 101
+                - type: custom:button-card
+                  color_type: card
+                  aspect_ratio: 2/1
+                  color: rgb(225, 255, 0)
+                  tap_action:
+                    action: call-service
+                    service: localtuya.set_dp
+                    service_data:
+                      value: RG
+                      device_id: 13681632c44f33e17e70
+                      dp: 101
+                - type: custom:button-card
+                  color_type: card
+                  aspect_ratio: 2/1
+                  color: rgb(0, 255, 0)
+                  tap_action:
+                    action: call-service
+                    service: localtuya.set_dp
+                    service_data:
+                      value: G
+                      device_id: 13681632c44f33e17e70
+                      dp: 101
+                - type: custom:button-card
+                  color_type: card
+                  aspect_ratio: 2/1
+                  color: rgb(0, 255, 255)
+                  tap_action:
+                    action: call-service
+                    service: localtuya.set_dp
+                    service_data:
+                      value: GB
+                      device_id: 13681632c44f33e17e70
+                      dp: 101
+            - type: horizontal-stack
+              cards:
+                - type: custom:button-card
+                  color_type: card
+                  aspect_ratio: 2/1
+                  color: rgb(0, 0, 255)
+                  tap_action:
+                    action: call-service
+                    service: localtuya.set_dp
+                    service_data:
+                      value: B
+                      device_id: 13681632c44f33e17e70
+                      dp: 101
+                - type: custom:button-card
+                  color_type: card
+                  aspect_ratio: 2/1
+                  color: rgb(225, 0, 255)
+                  tap_action:
+                    action: call-service
+                    service: localtuya.set_dp
+                    service_data:
+                      value: RB
+                      device_id: 13681632c44f33e17e70
+                      dp: 101
+                - type: custom:button-card
+                  color_type: card
+                  aspect_ratio: 2/1
+                  color: rgb(255, 255, 255)
+                  tap_action:
+                    action: call-service
+                    service: localtuya.set_dp
+                    service_data:
+                      value: RGB
+                      device_id: 13681632c44f33e17e70
+                      dp: 101
+                - type: custom:button-card
+                  color_type: card
+                  aspect_ratio: 2/1
+                  color: rgb(0, 0, 0)
+                  name: Rainbow
+                  tap_action:
+                    action: call-service
+                    service: localtuya.set_dp
+                    service_data:
+                      value: Color
+                      device_id: 13681632c44f33e17e70
+                      dp: 101
+            - type: horizontal-stack
+              cards:
+                - type: custom:button-card
+                  aspect_ratio: 2/1
+                  name: Bright
+                  tap_action:
+                    action: call-service
+                    service: localtuya.set_dp
+                    service_data:
+                      value: Bright
+                      device_id: 13681632c44f33e17e70
+                      dp: 102
+                - type: custom:button-card
+                  aspect_ratio: 2/1
+                  name: Gradually
+                  tap_action:
+                    action: call-service
+                    service: localtuya.set_dp
+                    service_data:
+                      value: Gradually
+                      device_id: 13681632c44f33e17e70
+                      dp: 102
+                - type: custom:button-card
+                  aspect_ratio: 2/1
+                  name: Star
+                  tap_action:
+                    action: call-service
+                    service: localtuya.set_dp
+                    service_data:
+                      value: Star
+                      device_id: 13681632c44f33e17e70
+                      dp: 102
+                - type: custom:button-card
+                  aspect_ratio: 2/1
+                  name: Flower
+                  tap_action:
+                    action: call-service
+                    service: localtuya.set_dp
+                    service_data:
+                      value: Flower
+                      device_id: 13681632c44f33e17e70
+                      dp: 102
+            - type: horizontal-stack
+              cards:
+                - type: custom:button-card
+                  aspect_ratio: 2/1
+                  name: Marquee
+                  tap_action:
+                    action: call-service
+                    service: localtuya.set_dp
+                    service_data:
+                      value: Marquee
+                      device_id: 13681632c44f33e17e70
+                      dp: 102
+                - type: custom:button-card
+                  aspect_ratio: 2/1
+                  name: Fireworks
+                  tap_action:
+                    action: call-service
+                    service: localtuya.set_dp
+                    service_data:
+                      value: Fireworks
+                      device_id: 13681632c44f33e17e70
+                      dp: 102
+                - type: custom:button-card
+                  aspect_ratio: 2/1
+                  name: Meteor
+                  tap_action:
+                    action: call-service
+                    service: localtuya.set_dp
+                    service_data:
+                      value: Meteor
+                      device_id: 13681632c44f33e17e70
+                      dp: 102
+                - type: custom:button-card
+                  aspect_ratio: 2/1
+                  name: Stream
+                  tap_action:
+                    action: call-service
+                    service: localtuya.set_dp
+                    service_data:
+                      value: Stream
+                      device_id: 13681632c44f33e17e70
+                      dp: 102
   - title: Vacuum
     path: ''
     icon: mdi:robot-vacuum-variant
@@ -177,7 +383,7 @@ views:
             service: script.roborock_zone_clean
             service_data:
               entity_id: input_boolean.bedroom_clean
-        image: /local/map_image_roborock.vacuum.s5.png
+        image: /local/map_image_roborock.vacuum.s5.png?v=1
       - type: grid
         cards:
           - type: button
@@ -393,6 +599,8 @@ views:
             entity: light.ikea_bulb_kids_room
             name: IKEA bulb
         columns: 2
+      - type: thermostat
+        entity: climate.thermostat_kids_room
       - type: grid
         cards:
           - type: sensor
@@ -424,20 +632,21 @@ views:
           - entity: humidifier.xiaomi_humidifier
           - entity: input_select.xiaomi_humidifier_mode
           - entity: input_number.xiaomi_humidifier_target_level
-          - entity: switch.xiaomi_humidifier_led
-          - entity: switch.xiaomi_humidifier_child_lock
-          - entity: switch.xiaomi_humidifier_dry_mode
-          - entity: sensor.xiaomi_humidifier_depth
+          - entity: select.xiaomi_humidifier_led_brightness
+          - entity: switch.xiaomi_humidifier_child_lock_2
+          - entity: switch.xiaomi_humidifier_dry_mode_2
+          - entity: sensor.xiaomi_humidifier_water_level
       - type: entities
         entities:
           - entity: fan.xiaomi_air_purifier_2
           - entity: input_select.xiaomi_airpurifier_mode
-          - entity: input_number.xiaomi_airpurifier_favorite_level
-          - entity: switch.xiaomi_airpurifier_child_lock
-          - entity: switch.xiaomi_airpurifier_led
-          - entity: switch.xiaomi_airpurifier_buzzer
-          - entity: sensor.xiaomi_airpurifier_speed
-          - entity: sensor.xiaomi_airpurifier_filter_remaining
+          - entity: number.xiaomi_air_purifier_2_favorite_level
+          - entity: select.xiaomi_air_purifier_2_led_brightness
+          - entity: switch.xiaomi_air_purifier_2_child_lock
+          - entity: switch.xiaomi_air_purifier_2_buzzer
+          - entity: sensor.xiaomi_air_purifier_2_motor_speed
+          - entity: sensor.xiaomi_air_purifier_2_filter_life_remaining
+          - entity: sensor.xiaomi_air_purifier_2_filter_use
         show_header_toggle: false
       - type: conditional
         conditions: []
@@ -598,6 +807,10 @@ views:
       - type: thermostat
         entity: climate.thermostat_bedroom
         name: Thermostat
+      - type: entities
+        entities:
+          - entity: switch.zimi_powerstrip_v2
+            name: Power stripe
   - title: Living room
     path: living-room
     icon: mdi:television
@@ -642,6 +855,12 @@ views:
               action: toggle
             entity: light.yeelight_ceiling10_0x000000000776846c
             name: Pendant
+          - type: button
+            tap_action:
+              action: toggle
+            icon: mdi:pine-tree
+            entity: switch.gosundsp111_1_2
+            name: Choinka
           - type: button
             tap_action:
               action: toggle
@@ -703,10 +922,6 @@ views:
             icon: mdi:clock-outline
         columns: 5
         square: true
-      - type: entities
-        entities:
-          - entity: switch.zimi_powerstrip_v2
-            name: Power stripe
       - type: media-control
         entity: media_player.yamaha_salon
       - type: media-control
@@ -725,6 +940,24 @@ views:
             entity: light.yeelight_ceiling10_0x000000000776846c_ambilight
             name: Ambilight
         columns: 2
+  - icon: mdi:shower
+    badges: []
+    cards:
+      - type: grid
+        cards:
+          - type: sensor
+            graph: line
+            entity: sensor.temp_bathroom_temperature
+            name: Temp
+            hours_to_show: 12
+          - type: sensor
+            entity: sensor.temp_bathroom_humidity
+            graph: line
+            name: Hum
+            hours_to_show: 12
+        columns: 2
+      - type: thermostat
+        entity: climate.thermostat_bathroom
   - icon: mdi:door
     title: ''
     badges: []
@@ -743,18 +976,66 @@ views:
           - entity: light.lumi_gateway_v3_light
             name: Night light
         title: Lights
-  - title: Energy
-    path: energy
-    icon: mdi:battery-unknown
-    badges: []
-    cards: []
-  - title: TEST
-    path: test
+  - title: ''
+    path: Server
     visible:
-      - user: 6244b2c3d68440548907af236c60216e
       - user: 66f63a1b859f46f38fc8555a1d2f564d
+    icon: mdi:nas
     badges: []
     cards:
-      - type: picture-glance
-        entities: []
-        camera_image: camera.xiaomi_cloud_map_extractor
+      - type: vertical-stack
+        cards:
+          - type: glance
+            entities:
+              - entity: sensor.synology_temperature
+              - entity: sensor.synology_drive_1_temperature
+              - entity: sensor.synology_drive_2_temperature
+              - entity: sensor.synology_volume_1_volume_used
+            show_name: true
+            title: Synology NAS
+          - type: gauge
+            min: 0
+            max: 6.98
+            entity: sensor.synology_volume_1_used_space
+          - type: entities
+            entities:
+              - entity: sensor.synology_memory_size
+              - entity: sensor.synology_memory_usage_real
+              - entity: sensor.synology_cpu_load_average_1_min
+              - entity: sensor.synology_last_boot
+              - entity: sensor.synology_network_down
+              - entity: sensor.synology_network_up
+              - entity: binary_sensor.synology_security_status
+      - type: vertical-stack
+        cards:
+          - type: glance
+            entities:
+              - entity: sensor.ups_status
+              - entity: sensor.ups_battery_charge
+              - entity: sensor.ups_load
+              - entity: sensor.ups_battery_runtime
+            title: UPS
+          - type: gauge
+            entity: sensor.ups_battery_charge
+            min: 0
+            max: 100
+      - type: entities
+        entities:
+          - entity: sensor.cpu_temperature
+          - entity: sensor.processor_use_percent
+          - entity: sensor.memory_use_percent
+          - entity: sensor.load_15m
+          - entity: sensor.disk_use
+          - entity: sensor.disk_use_percent
+          - entity: sensor.last_boot
+        title: Raspberry Pi 4
+      - type: horizontal-stack
+        cards:
+          - type: sensor
+            graph: line
+            entity: sensor.0x00158d0004665f01_temperature
+            name: Server cabinet temp
+          - type: sensor
+            graph: line
+            entity: sensor.0x00158d0004665f01_humidity
+            name: Server cabinet hum
