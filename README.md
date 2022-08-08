@@ -16,7 +16,6 @@ WiFi:
 - Xiaomi Smart WiFi Socket (ZNCZ04CM)
 - Xiaomi Mijia Gateway 2
 
-
 Zigbee:
 - Aqara Temperature and Humidity Sensor (WSDCGQ11LM) 5x
 - Xiaomi Mi power plug ZigBee (ZNCZ02LM)
